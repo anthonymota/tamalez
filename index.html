@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Senda</title>
+</head>
+<body>
+
+    <h1 class="neon" data-text="U">CH<span class="flicker-slow">AVE</span>Z'S <span class="flicker-fast">TAMA</span>LES</h1>
+
+    <form id="mainForm">
+
+        <div>  
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="tamales">
+            <div class="range-wrap">
+                <label for="res">Res</label>
+                <input type="range" name="tamales" class='range' id="res" min="0" max="50">
+                <output class="bubble"></output>
+            </div>
+            <div class="range-wrap">
+                <label for="dulce">Dulce</label>
+                <input type="range" name="tamales" class='range' id="dulce" min="0" max="50">
+                <output class="bubble"></output>
+            </div>
+            <div class="range-wrap">
+                <label for="rajas">Rajas</label>
+                <input type="range" name="tamales" class='range' id="rajas" min="0" max="50">
+                <output class="bubble"></output>
+            </div>
+        </div>
+        
+        <div class="range-wrap">
+            <label for="champurrado">Champurrado</label>
+            <input type="range" name="champurrado" class='range' id="champurrado" min="0" max="10">
+            <output class="bubble"></output>
+        </div>
+
+        <div>
+            <label for="comment">Comment</label>
+            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+        </div>
+        
+        <button class="button">Save</button>
+    </form>
+
+
+    <a href="/customers.html" class="btn">Customers</a> 
+
+    
+
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" 
+        src="script.js">
+    </script>
+    
+</body>
+</html>
