@@ -13,9 +13,9 @@ const itemSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  res: Number,
+  verdes: Number,
   rajas: Number,
-  dulce: Number,
+  mole: Number,
   champurrado: Number,
   comment: String,
 });
@@ -44,9 +44,9 @@ app.get('/customers', function (request, response) {
 app.post('/customers', function (request, response) {
   const item = new Item({
     name: request.body.name,
-    res: request.body.res,
+    verdes: request.body.verdes,
     rajas: request.body.rajas,
-    dulce: request.body.dulce,
+    mole: request.body.mole,
     champurrado: request.body.champurrado,
     comment: request.body.comment,
   });
@@ -55,14 +55,14 @@ app.post('/customers', function (request, response) {
 });
 
 app.post('/delete', function (req, res) {
-  const checkedItemId=req.body.butt;
+  const checkedItemId = req.body.butt;
 
-  Item.findByIdAndRemove(checkedItemId,function(err){
-    if (!err){
-        console.log("Item Deleted");
-        res.redirect('/customers')
-    } 
-  })
+  Item.findByIdAndRemove(checkedItemId, function (err) {
+    if (!err) {
+      console.log('Item Deleted');
+      res.redirect('/customers');
+    }
+  });
 });
 
 app.listen(3000, function () {
