@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/tamalesDB', {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  'mongodb+srv://chavez_tamales:chaveztamales@cluster0.nftz3xc.mongodb.net/tamalesDB',
+  {
+    useNewUrlParser: true,
+  }
+);
 
 const app = express();
 
