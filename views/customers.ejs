@@ -10,35 +10,36 @@
 
     <h1 class="neon" data-text="U">O<span class="flicker-slow">RD</span>E<span class="flicker-fast">R</span>S</h1>
 
-    <% doresultsStorage.forEach(function(i) { %>
-        <form action="/delete" method="post">
-            <div class="item">
-                <input type="checkbox" class="checkbox" onChange="this.form.submit()" name="butt" value="<%=i._id%>">
-                <h1><%=i.name %> </h1>
-                <ul>
-                    <li>Res: <%= i.res%></li>
-                    <li>Rajas: <%= i.rajas%></li>
-                    <li>Dulce: <%= i.dulce%></li>
-                    <li>Champurrado: <%= i.champurrado%></li>
-                    <li>Comment: <%= i.comment%></li>
-                </ul>
-            </div>
-        </form>
-    <% }) %> 
-        
-    <table>
-
-    </table>
+    <div class="table">
+        <% doresultsStorage.forEach(function(i) { %>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <div class="item_name">
+                        <input type="checkbox" class="checkbox" onChange="this.form.submit()" name="butt" value="<%=i._id%>">
+                        <h1><%=i.name %> </h1>
+                    </div>
+                    <ul>
+                        <li>Res: <%= i.res%></li>
+                        <li>Rajas: <%= i.rajas%></li>
+                        <li>Dulce: <%= i.dulce%></li>
+                        <li>Champurrado: <%= i.champurrado%></li>
+                        <li>Comment: <%= i.comment%></li>
+                    </ul>
+                </div>
+            </form>
+        <% }) %> 
+    </div>
 
     <style>
 
-        .checkbox {
-            position: relative;
-            left: 130px;
-            top: 50px;
-
+        .item_name {
+            display: flex;
         }
-
+        .table {
+            border: solid 5px blue;
+            display: flex;
+            flex-wrap: wrap;
+        }
         .checkbox:checked:before{
             background-color:green;
             }
