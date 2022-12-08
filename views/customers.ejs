@@ -14,10 +14,10 @@
 
     <div class="table">
         <% doresultsStorage.forEach(function(i) { %>
-            <form action="/delete" method="post">
+            <form action="/delete" method="post" id="deleteForm">
                 <div class="item">
                     <div class="item_name">
-                        <button type="submit" class="button" onclick="this.form.submit()" name="butt" value="<%=i._id%>">Delete</button>
+                        <button type="submit" class="button" onclick="deleteEntry" name="butt" value="<%=i._id%>">Delete</button>
                         <h1><%=i.name %> </h1>
                     </div>
                     <ul>
@@ -118,6 +118,12 @@
         console.log('heny')
         console.log(resultsStorage)
 
+
+        function deleteEntry() {
+            document.getElementById("deleteForm").addEventListener("click",function() {
+                form.submit()
+            })
+        }
        function generateTableHead(table) {
             let thead=table.createTHead();
             let tableheader=thead.insertRow()
