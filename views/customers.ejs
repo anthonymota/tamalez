@@ -17,7 +17,7 @@
             <form action="/delete" method="post">
                 <div class="item">
                     <div class="item_name">
-                        <input type="checkbox" class="checkbox" onChange="this.form.submit()" name="butt" value="<%=i._id%>">
+                        <button type="submit" class="checkbox" onClick="this.form.submit()" name="butt" value="<%=i._id%>">Delete</button>
                         <h1><%=i.name %> </h1>
                     </div>
                     <ul>
@@ -45,7 +45,7 @@
         .table * {
             font-family: 'Chalkduster',cursive;
             font-size: 20px;
-            text-shadow: 2px 2px 2px #ffffff;
+            text-shadow: 2px 0px 2px green;
         }
         body {
             background-image: url("images/pexels-lukas-349609-2.jpg");
