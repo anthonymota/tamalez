@@ -17,7 +17,7 @@
             <form action="/delete" method="post" id="deleteForm">
                 <div class="item">
                     <div class="item_name">
-                        <button type="submit" class="button" onclick="deleteEntry" name="butt" value="<%=i._id%>">Delete</button>
+                        <button type="submit" class="button" onclick="deleteEntry" name="butt" id="deletex" value="<%=i._id%>">Delete</button>
                         <h1><%=i.name %> </h1>
                     </div>
                     <ul>
@@ -118,9 +118,9 @@
         console.log('heny')
         console.log(resultsStorage)
 
-
+        var form=document.getElementById("deleteForm")
         function deleteEntry() {
-            document.getElementById("deleteForm").addEventListener("click",function() {
+            document.getElementById("deletex").addEventListener("click",function() {
                 form.submit()
             })
         }
