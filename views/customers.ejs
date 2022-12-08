@@ -10,7 +10,8 @@
 
     <h1 class="neon" data-text="U">O<span class="flicker-slow">RD</span>E<span class="flicker-fast">R</span>S</h1>
 
-    <a href="/">Home</a>
+    <a href="/" class="button">Home</a>
+
     <div class="table">
         <% doresultsStorage.forEach(function(i) { %>
             <form action="/delete" method="post">
@@ -92,6 +93,19 @@
             border-bottom: black 1px solid;
             display: flex;
             flex-direction: column;
+        }
+
+        .button {
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Chalkduster',cursive;
+            border-radius: 90px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            text-shadow: 2px 2px 2px #ffffff;
+            text-decoration: none;
         }
 
     </style>
