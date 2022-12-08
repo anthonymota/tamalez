@@ -10,6 +10,7 @@
 
     <h1 class="neon" data-text="U">O<span class="flicker-slow">RD</span>E<span class="flicker-fast">R</span>S</h1>
 
+    <a href="/">Home</a>
     <div class="table">
         <% doresultsStorage.forEach(function(i) { %>
             <form action="/delete" method="post">
@@ -40,9 +41,6 @@
             display: flex;
             flex-wrap: wrap;
         }
-        .checkbox:checked:before{
-            background-color:green;
-            }
         
         body {
             background-image: url("images/pexels-lukas-349609-2.jpg");

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta  http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -10,12 +10,38 @@
 
     <h1 class="neon" data-text="U">O<span class="flicker-slow">RD</span>E<span class="flicker-fast">R</span>S</h1>
 
+    <a href="/" class="button">Home</a>
 
-    <table>
-
-    </table>
+    <div class="table">
+        <% doresultsStorage.forEach(function(i) { %>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <div class="item_name">
+                        <input type="checkbox" class="checkbox" onChange="this.form.submit()" name="butt" value="<%=i._id%>">
+                        <h1><%=i.name %> </h1>
+                    </div>
+                    <ul>
+                        <li>Verdes: <%= i.verdes%></li>
+                        <li>Rajas: <%= i.rajas%></li>
+                        <li>Mole: <%= i.mole%></li>
+                        <li>Champurrado: <%= i.champurrado%></li>
+                        <li>Comment: <%= i.comment%></li>
+                    </ul>
+                </div>
+            </form>
+        <% }) %> 
+    </div>
 
     <style>
+
+        .item_name {
+            display: flex;
+        }
+        .table {
+            border: solid 5px blue;
+            display: flex;
+            flex-wrap: wrap;
+        }
         
         body {
             background-image: url("images/pexels-lukas-349609-2.jpg");
@@ -68,61 +94,26 @@
             display: flex;
             flex-direction: column;
         }
-    </style>
-
-    <script>
-        //definitions
-        let resultsStorage= JSON.parse(localStorage.getItem('results'))
-
-
-       function generateTableHead(table) {
-            let thead=table.createTHead();
-            let tableheader=thead.insertRow()
-            for (let key of data) {
-                let th=document.createElement('th');
-                let text=document.createTextNode(key)
-                th.appendChild(text)
-                tableheader.appendChild(th)
-                }
-            }    
-        function generateTable(table,data) {
-            for (let [i,element] of data.entries()) {
-                let row =table.insertRow();
-                
-            for (key in element) {
-                let cell=row.insertCell();
-                let text=document.createTextNode(element[key])
-                cell.appendChild(text)
-                }
-                let btn=document.createElement('button')
-                btn.innerHTML='Delete Row'
-                btn.onclick = function () {
-                    delete(resultsStorage[i])
-                    table.deleteRow(i+1)
-                    let results=resultsStorage.filter((a)=>a);
-                    //save results to localStorage
-                    localStorage.setItem('results',JSON.stringify(results));
-                  };
-                row.appendChild(btn)
-                
-            }
+        .button {
+            flex-basis: 25%;
+            margin-top: 10%;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: 'Chalkduster',cursive;
+            border-radius: 90px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            text-shadow: 2px 2px 2px #ffffff;
+            text-decoration: none;
         }
-       
-       //assign js object to html table element
-       let table=document.querySelector('table')
-        let data=Object.keys(resultsStorage[0]);
 
-       //page load
+        .button:hover {
+            transition: all 250ms linear;
+            opacity: 0.5;
+        }
 
-       console.log(resultsStorage)
-       //create rows
-       generateTable(table, resultsStorage)
-
-       //create head in table
-       generateTableHead(table,data);
-
-       
-    
-    </script>
+    </style>
+   
 </body>
 </html>
