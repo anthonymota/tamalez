@@ -46,9 +46,6 @@
         
         .neon {
             font-family: 'MONOTON',cursive;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             font-size: 80px;
             color: rgb(0, 204, 10);
             transform: rotate(5deg);
@@ -130,6 +127,13 @@
             transition: all 250ms linear;
             opacity: 0.5;
         }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .neon {
+              font-size: 60px;
+            }
+          }
     </style>
     
 
