@@ -17,7 +17,7 @@
             <form action="/delete" method="post" id="deleteForm">
                 <div class="item">
                     <div class="item_name">
-                        <h1><%=i.name %> </h1>
+                        <h1><%= i.name %> </h1>
                         <button type="submit" class="button" onclick="deleteEntry" name="butt" id="deletex" value="<%=i._id%>">Delete</button>
                     </div>
                     <ul>
@@ -115,62 +115,12 @@
     </style>
     <script>
         //definitions
-        console.log('heny')
-        console.log(resultsStorage)
-
         var form=document.getElementById("deleteForm")
         function deleteEntry() {
             document.getElementById("deletex").addEventListener("click",function() {
                 form.submit()
             })
-        }
-       function generateTableHead(table) {
-            let thead=table.createTHead();
-            let tableheader=thead.insertRow()
-            for (let key of data) {
-                let th=document.createElement('th');
-                let text=document.createTextNode(key)
-                th.appendChild(text)
-                tableheader.appendChild(th)
-                }
-            }    
-        function generateTable(table,data) {
-            for (let [i,element] of data.entries()) {
-                let row =table.insertRow();
-                
-            for (key in element) {
-                let cell=row.insertCell();
-                let text=document.createTextNode(element[key])
-                cell.appendChild(text)
-                }
-                let btn=document.createElement('button')
-                btn.innerHTML='Delete Row'
-                btn.onclick = function () {
-                    delete(resultsStorage[i])
-                    table.deleteRow(i+1)
-                    let results=resultsStorage.filter((a)=>a);
-                    //save results to localStorage
-                    localStorage.setItem('results',JSON.stringify(results));
-                  };
-                row.appendChild(btn)
-                
-            }
-        }
-       
-       //assign js object to html table element
-       let table=document.querySelector('table')
-        let data=Object.keys(resultsStorage[0]);
-
-       //page load
-
-       console.log('YOLOOLOLOL'+resultsStorage)
-       //create rows
-       generateTable(table, resultsStorage)
-
-       //create head in table
-       generateTableHead(table,data);
-
-       
+        }      
     
     </script>
 </body>
