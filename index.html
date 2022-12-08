@@ -7,9 +7,10 @@
     <title>Chavez Tamales</title>
 </head>
 <body>
-    
-    <h1 class="neon" data-text="U">CH<span class="flicker-slow">AVE</span>Z'S <span class="flicker-fast">TAMA</span>LES</h1>
-
+    <div class="heading">
+        <h1 class="neon" data-text="U">CH<span class="flicker-slow">AVE</span>Z'S <span class="flicker-fast">TAMA</span>LES</h1>
+    </div>
+   
     <form id="mainForm" method="post" action="/customers">
         <div class="tamales">
             <label for="name">name:</label>
@@ -43,10 +44,10 @@
             background-image: url("../../images/pexels-lukas-349609-2.jpg");
             background-size:cover;
             margin: 0;
-            display: flex;
-            flex-direction: column;
         }
-        
+        .heading {
+            display: flex;
+        }
         .neon {
             font-family: 'MONOTON',cursive;
             font-size: 80px;
